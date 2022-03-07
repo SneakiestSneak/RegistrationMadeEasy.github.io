@@ -1,2 +1,2 @@
-# SneakiestSneak.github.io
+# RegistrationMadeEasy.github.io
 Senior project
