@@ -1,0 +1,91 @@
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .collapsible {
+        background-color: black;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        padding: 22px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-family: "Founders Grotesk",sans-serif; /*lipscomb font, not working? */
+        font-weight: 500;
+        font-size: 2rem;
+    }
+
+    .active, .collapsible:hover {
+        background-color: lightgrey;
+    }
+
+    .collapsible:after {
+        content: '\0002B'; /* Unicode character for "plus sign" */
+        font-size: 24px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .active:after {
+        content: "\02716"; /* Unicode Scharacter for "heavy multiplication x" */
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+
+    .content {
+        font-family: "adobe-caslon-pro",serif;
+        font-size: 1.125rem;
+        line-height: 1.333;
+        padding: 0 18px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        color: #252424;
+    }
+
+    .header {
+        font-family: "Founders Grotesk",sans-serif;
+        text-align: center;
+        font-weight: 600;
+        font-size: 3rem;
+        color: white;
+        margin-top: 1em;
+    }
+    </style>
+
+</head>
+
+<body>
+    <h2 class="header">       Classes </h2>
+
+<button class="collapsible"> <input type="checkbox" id="checkbox" name="classtaken" value="checkbox">
+    <label for="checkbox">Class Taken</label><br>CS 1123 Intro to Computer Science</button>
+<div class="content">
+          <p>Offered in Fall and Spring</p>
+</div>
+
+</div>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.maxHeight){
+          content.style.maxHeight = null;
+        } else {
+          content.style.maxHeight = content.scrollHeight + "px";
+        } 
+      });
+    }
+    </script>
+
+</body>
+
+
